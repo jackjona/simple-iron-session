@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import Router from "next/router";
 import useSWR from "swr";
+import Router from "next/router";
 
 // User login status logic
 export default function useUser({

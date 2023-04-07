@@ -1,6 +1,6 @@
+import { useState } from "react";
 import Router from "next/router";
 import { withSessionSsr } from "../utils/session";
-import { useState } from "react";
 
 // Users can't view this page unless they're logged in.
 export default function Secure() {

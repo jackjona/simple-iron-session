@@ -7,7 +7,7 @@ export default withSessionRoute(async (req, res) => {
     if (consent === "accepted") {
       const user = { isConsentGiven: true };
       req.session.user = user;
-      await req.session.save(); //
+      await req.session.save();
       res.json(user);
     } else {
       const user = { isConsentGiven: false };

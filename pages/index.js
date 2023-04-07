@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import useUser from "../utils/useUser";
 
 // User login page
@@ -38,7 +39,11 @@ export default function Login() {
       <h1 className="text-7xl font-bold">Login Page</h1>
       <p className="mt-4 text-2xl">Please log in to see the protected page.</p>
       <p className="mt-4 text-lg">
-        You can&apos;t view <code>/secure</code> without logging in.
+        You can&apos;t view{" "}
+        <Link href="/secure">
+          <code className="hover:underline">/secure</code>
+        </Link>{" "}
+        without logging in.
       </p>
       <button
         onClick={handleSubmit}
