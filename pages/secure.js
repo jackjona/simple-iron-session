@@ -26,7 +26,7 @@ export default function Secure() {
     <div className="flex flex-col bg-slate-800 p-10 text-white justify-center items-center min-h-screen text-center">
       <h1 className="text-7xl font-bold">Protected Page</h1>
       <p className="mt-4 text-2xl">
-        This is a protected page that can't be viewed unless logged in.
+        This is a protected page that can&apos;t be viewed unless logged in.
       </p>
       <button
         onClick={handleSubmit}
