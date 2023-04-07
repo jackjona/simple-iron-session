@@ -6,6 +6,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Simple iron-session</title>
+        <meta
+          name="description"
+          content="A simple iron-session implementation in Next.js."
+        />
       </Head>
       <Component {...pageProps} />
     </>
