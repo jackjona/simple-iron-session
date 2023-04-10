@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { useState } from "react";
-import Link from "next/link";
 import useUser from "../utils/useUser";
 
 // User login page
@@ -40,9 +40,9 @@ export default function Login() {
       <p className="mt-4 text-2xl">Please log in to see the protected page.</p>
       <p className="mt-4 text-lg">
         You can&apos;t view{" "}
-        <Link href="/secure">
+        <a href="/secure">
           <code className="hover:underline">/secure</code>
-        </Link>{" "}
+        </a>{" "}
         without logging in.
       </p>
       <button
