@@ -1,4 +1,4 @@
-// eslint-disable @next/next/no-html-link-for-pages
+/* eslint-disable @next/next/no-html-link-for-pages */
 import { useState } from "react";
 import useUser from "../utils/useUser";
 
