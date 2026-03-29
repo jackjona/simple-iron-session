@@ -2,7 +2,7 @@ import { getIronSession } from "iron-session";
 
 const sessionOptions = {
   password: process.env.SECRET_COOKIE_PASSWORD,
-  cookieName: "consent_given",
+  cookieName: "consent_given", // arbitrary cookie name
 
   cookieOptions: {
     // secure: true should be used below in production (HTTPS) but can't be used in development (HTTP)
