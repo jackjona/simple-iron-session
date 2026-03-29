@@ -1,4 +1,4 @@
-import { withIronSessionApiRoute, withIronSessionSsr } from "iron-session/next";
+import { getIronSession } from "iron-session";
 
 const sessionOptions = {
   password: process.env.SECRET_COOKIE_PASSWORD,
@@ -12,9 +12,18 @@ const sessionOptions = {
 };
 
 export function withSessionRoute(handler) {
-  return withIronSessionApiRoute(handler, sessionOptions);
+  return async function (req, res) {
+    const session = await getIronSession(req, res, sessionOptions);
+    req.session = session; // mimic old behavior
+    return handler(req, res);
+  };
 }
 
 export function withSessionSsr(handler) {
-  return withIronSessionSsr(handler, sessionOptions);
+  return async function (context) {
+    const { req, res } = context;
+    const session = await getIronSession(req, res, sessionOptions);
+    context.req.session = session; // mimic old behavior
+    return handler(context);
+  };
 }

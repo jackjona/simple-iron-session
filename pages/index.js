@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import { useState } from "react";
 import useUser from "../utils/useUser";
+import Link from "next/link";
 
 // User login page
 export default function Login() {
@@ -43,7 +44,7 @@ export default function Login() {
         <a href="/secure">
           <code className="hover:underline">/secure</code>
         </a>{" "}
-        without logging in.
+        without logging in. (You will be redirected back to this page.)
       </p>
       <button
         onClick={handleSubmit}
@@ -51,6 +52,12 @@ export default function Login() {
       >
         Login
       </button>
+      <a
+        href="/"
+        className="mt-8 px-10 py-4 bg-black hover:bg-slate-700 font-semibold rounded-lg ring ring-white"
+      >
+        Try Visiting /secure
+      </a>
       {error && (
         <h2 className="mt-4 text-xl font-semibold text-red-600">
           Error Logging In. Please Try Again Later
